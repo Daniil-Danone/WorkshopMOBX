@@ -19,6 +19,11 @@ const Head = styled.div`
     height: 100px;
     border: 1px solid black;
     cursor: pointer;
+    transition: .3s ease;
+
+    &:hover{
+        box-shadow: 1px 1px 4px gray;
+    }
 `
 
 const Arms = styled.div`
@@ -33,6 +38,11 @@ const Arm = styled.div`
     height: 40px;
     border: 1px solid black;
     cursor: pointer;
+    transition: .3s ease;
+    
+    &:hover{
+        box-shadow: 1px 1px 4px gray;
+    }
 `
 
 const Body = styled.div`
@@ -40,6 +50,11 @@ const Body = styled.div`
     height: 200px;
     border: 1px solid black;
     cursor: pointer;
+    transition: .3s ease;
+
+    &:hover{
+        box-shadow: 1px 1px 4px gray;
+    }
 `
 
 const Legs = styled.div`
@@ -54,6 +69,11 @@ const Leg = styled.div`
     height: 100px;
     border: 1px solid black;
     cursor: pointer;
+    transition: .3s ease;
+
+    &:hover{
+        box-shadow: 1px 1px 4px gray;
+    }
 `
 
 const Skin: React.FC = observer(() => {

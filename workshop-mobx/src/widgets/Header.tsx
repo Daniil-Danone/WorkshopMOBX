@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
+import navbar from '../store/navbar'
+import { observer } from 'mobx-react-lite'
 
 
 const Container = styled.div`
@@ -29,15 +31,21 @@ const Button = styled.button`
 `
 
 
-const Header: React.FC = () => {
-  return (
-    <Container>
-        <Button>головы</Button>
-        <Button>ноги</Button>
-        <Button>тело</Button>
-        <Button>руки</Button>
-    </Container>
-  )
-}
+const Header: React.FC = observer(() => {
+    const active = navbar.part;
+
+    function changeNavbar(part:string){
+        navbar.changePart(part);
+    }
+
+    return (
+        <Container>
+            <Button onClick={() => changeNavbar('head')} style={active === 'head' ? {background: 'black', color: 'white'} : {}}>голова</Button>
+            <Button onClick={() => changeNavbar('body')} style={active === 'body' ? {background: 'black', color: 'white'} : {}}>тело</Button>
+            <Button onClick={() => changeNavbar('legs')} style={active === 'legs' ? {background: 'black', color: 'white'} : {}}>ноги</Button>
+            <Button onClick={() => changeNavbar('arms')} style={active === 'arms' ? {background: 'black', color: 'white'} : {}}>руки</Button>
+        </Container>
+    )
+})
 
 export default Header
